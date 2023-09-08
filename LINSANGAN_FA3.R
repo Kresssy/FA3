@@ -3,26 +3,26 @@ table1 <- c(88, 45, 53, 86, 33, 86, 85, 30, 89, 53, 41, 96, 56, 38, 62,
            42, 34, 79, 72, 88, 99, 82, 62, 57, 42, 28, 55, 67, 62, 60,
            96, 61, 57, 75, 93, 34, 75, 53, 32, 28, 73, 51, 69, 91, 35)
 
+Valid <- sum(!is.na(table1))
+Mode_value <- as.numeric(names(sort(table(table1), decreasing = TRUE)[1]))
+Median_value <- median(table1)
+Mean_value <- mean(table1)
+
+Standard_Deviation <- sd(table1)
+Variance <- var(table1)
+Skewness_value <- skewness(table1)
+Standard_Error_Skewness <- Skewness_value / sqrt(length(table1))
+Kurtosis_value <- kurtosis(table1)
+Standard_Error_Kurtosis <- Kurtosis_value / sqrt(length(table1))
+
+Minimum_value <- min(table1)
+Maximum_value <- max(table1)
+
 Q1 <- quantile(table1, 0.25)
 Q2 <- median(table1)
 Q3 <- quantile(table1, 0.75)
 D9 <- quantile(table1, 0.90)
 P95 <- quantile(table1, 0.95)
-
-Valid <- sum(!is.na(table1))
-Mean_value <- mean(table1)
-Median_value <- median(table1)
-Mode_value <- as.numeric(names(sort(table(table1), decreasing = TRUE)[1]))
-
-Standard_Deviation <- sd(table1)
-Minimum_value <- min(table1)
-Maximum_value <- max(table1)
-
-Skewness_value <- skewness(table1)
-Variance <- var(table1)
-Standard_Error_Skewness <- Skewness_value / sqrt(length(table1))
-Kurtosis_value <- kurtosis(table1)
-Standard_Error_Kurtosis <- Kurtosis_value / sqrt(length(table1))
 
 print("Valid:", Valid, "\n")
 print("Mode:", Mode_value, "\n")
